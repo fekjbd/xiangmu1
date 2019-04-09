@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/bootstrap.css"/>
+    <link rel="stylesheet" href="../css/header_top.css"/>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <title>Document</title>
+    <style>
+        .hide{ display: none; }
+    </style>
+</head>
+<body>
+<div id="top">
+    <!--第一部分：页面顶部：网站LOGO，搜索，登录注册-->
+    <div class="top_main">
+        <div class="top_main_left" data-target="shoucang">
+            <img src="../img/tubiao/shoucang1.png" data-trigger=img alt="1">
+            <span>收藏多优商城</span>
+            <script>
+                $("[data-trigger=img]").click(function() {
+                    var $img = $(this);
+                    var i = parseInt($img.attr("alt"));
+                    if (i < 2){
+                        i++
+                    }else{
+                        i = 1;
+                    }
+                    $img.attr({src: `../img/tubiao/shoucang${i}.png`, alt: i})
+                })
+            </script>
+        </div>
+        <!-- 省份下拉菜单-->
+        <div class="sheng">
+            <img src="../img/tubiao/place.png" alt=""/>
+            <select name="provs">
+                <option>省份</option><!--0-->
+                <option>北京市</option><!--1-->
+                <option>天津市</option>
+                <option>河北省</option>
+                <option>吉林省</option>
+                <option>河北省</option>
+                <option>山东省</option>
+                <option>河南省</option>
+                <option>江苏省</option>
+                <option>浙江省</option>
+                <option>安徽省</option>
+                <option>广东省</option>
+            </select>
+            <select name="cities" class="hide"></select>
+            <script>
+                /*实现“省”和“市”的级联下拉列表*/
+                var cities=[
+                    [
+                        {"name":'东城区',"value":101},
+                        {"name":'西城区',"value":102},
+                        {"name":'海淀区',"value":103},
+                        {"name":'朝阳区',"value":104}
+                    ],
+                    [
+                        {"name":'河东区',"value":201},
+                        {"name":'河西区',"value":202},
+                        {"name":'南开区',"value":203}
+                    ],
+                    [
+                        {"name":'石家庄',"value":301},
+                        {"name":'廊坊市',"value":302},
+                        {"name":'保定市',"value":303},
+                        {"name":'唐山市',"value":304},
+                        {"name":'秦皇岛',"value":305}
+                    ],
+                    [
+                        {"name":'长春市',"value":101},
+                        {"name":'四平市',"value":102},
+                        {"name":'通化市',"value":103},
+                        {"name":'白山市',"value":104}
+                    ],
+                    [
+                        {"name":'石家庄',"value":101},
+                        {"name":'唐山市',"value":102},
+                        {"name":'邯郸市',"value":103},
+                        {"name":'保定市',"value":104}
+                    ],
+                    [
+                        {"name":'济南市',"value":101},
+                        {"name":'青岛市',"value":102},
+                        {"name":'烟台市',"value":103},
+                        {"name":'日照市',"value":104}
+                    ],
+                    [
+                        {"name":'郑州市',"value":101},
+                        {"name":'开封市',"value":102},
+                        {"name":'洛阳市',"value":103},
+                        {"name":'南阳市',"value":104}
+                    ],
+                    [
+                        {"name":'南京市',"value":101},
+                        {"name":'镇江市',"value":102},
+                        {"name":'常州市',"value":103},
+                        {"name":'苏州市',"value":104}
+                    ],
+                    [
+                        {"name":'东城区',"value":101},
+                        {"name":'西城区',"value":102},
+                        {"name":'海淀区',"value":103},
+                        {"name":'朝阳区',"value":104}
+                    ],
+                    [
+                        {"name":'杭州市',"value":101},
+                        {"name":'嘉兴市',"value":102},
+                        {"name":'温州市',"value":103},
+                        {"name":'绍兴市',"value":104}
+                    ],
+                    [
+                        {"name":'合肥市',"value":101},
+                        {"name":'淮南市',"value":102},
+                        {"name":'宿州市',"value":103},
+                        {"name":'黄山市',"value":104}
+                    ],
+                    [
+                        {"name":'广州市',"value":101},
+                        {"name":'深圳市',"value":102},
+                        {"name":'珠海市',"value":103},
+                        {"name":'佛山市',"value":104}
+                    ],
+                ];
+                //1. 查找触发事件的元素
+                var selProvs=
+                        document.getElementsByName("provs")[0];
+                //2. 绑定事件处理函数
+                //当selProvs中的选中项改变时自动执行
+                selProvs.onchange=function(){
+                    //3. 查找要修改的元素:第二个select
+                    var selCts=
+                            document.getElementsByName("cities")[0]
+                    //4. 修改元素
+                    var selProvs=this;
+                    var i=selProvs.selectedIndex;
+                    if(i>0){
+                        var cts=cities[i-1];
+                        var frag=
+                                document.createDocumentFragment();
+                        //先添加一个<option>-请选择-
+                        var opt=document.createElement("option");
+                        opt.innerHTML="市区";
+                        frag.appendChild(opt);
+                        for(var city of cts){
+                            //每遍历一个城市，就创建一个option，并加入frag中
+                            var opt=document.createElement("option");
+                            frag.appendChild(opt);
+                            //将当前城市对象的name放入option中
+                            opt.innerHTML=city.name;
+                        }
+                        //每次添加新option之前，先清除旧的内容
+                        selCts.innerHTML="";
+                        selCts.appendChild(frag);
+                        selCts.className="";
+                    }else{
+                        selCts.className="hide";
+                    }
+                }
+            </script>
+        </div>
+        <div class="top_main_right">
+            <div class="dd">
+                <a href="">登录</a>
+                <span>|</span>
+            </div>
+            <div class="dd">
+                <a href="">注册</a>
+                <span>|</span>
+            </div>
+            <div class="server dd">
+                <a href="">我的订单</a>
+                <div class="server1 dingdan">
+                    <a href="">品牌收藏</a>
+                    <a href="">商品收藏</a>
+                    <a href="">我的足迹</a>
+                </div>
+                <span>|</span>
+            </div>
+            <div class="server dd">
+                <a href="">会员俱乐部</a>
+                <div class="server1 huiyuan">
+                    <a href="">俱乐部首页</a>
+                    <a href="">多优币兑换</a>
+                    <a href="">会员专享</a>
+                </div>
+                <span>|</span>
+            </div>
+            <div class="server dd">
+                <a href="" class="aa">客户服务</a>
+                <div class="server1 kehu">
+                    <a href="">联系客服</a>
+                    <a href="">帮助中心</a>
+                    <a href="">服务中心</a>
+                    <a href="">客户投诉</a>
+                </div>
+                <span>|</span>
+            </div>
+
+            <div class="server dd">
+                <a href="">多优首页</a>
+                <div class="server1 shouye">
+                    <a href="">多优服务</a>
+                    <a href="">多优论坛</a>
+                    <a href="">宠物百科</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/bootstrap.css"/>
+    <link rel="stylesheet" href="../css/header_search.css"/>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <title>Document</title>
+    <style>
+        .hide{ display: none; }
+    </style>
+</head>
+<body>
+    <!-- 搜索部分开始 -->
+    <div id="one">
+        <div class="main">
+            <div class="left">
+                <img  class="logo" src="../img/header/timg.jpg" alt="">
+                <div>
+                    <img class="first" src="../img/header/name.png" alt=""/>
+                    <img class="two" src="../img/header/duoyou.png" alt=""/>
+                </div>
+            </div>
+            <div class="center">
+                <input class="kuang" type="text" placeholder="请输入您要搜索的内容">
+                <button>搜索</button>
+                <p class="remen">热门搜索：
+                    <a href="">宠物用品</a>
+                    <a href="">狗粮</a>
+                    <a href="">猫咪</a>
+                    <a href="">口腔护理</a>
+                    <a href="">美毛护肤</a>
+                    <a href="">宠物玩具</a>
+                    <a href="">更多</a>
+                    <a href="">&gt;&gt;&gt;</a>
+                </p>
+                <script src="../js/jquery-1.11.3.js"></script>
+                <script>
+                    //                    $("button").click(function(){
+                    //                        alert("百度一下，你就知道！");
+                    //                    })
+                    //在input上按回车时自动执行
+                    $("input").keyup(function(e){
+                        if(e.keyCode==13)
+                            $("button").click()
+                    })
+                </script>
+
+            </div>
+            <div class="right">
+                <img src="../img/header/right.gif" alt=""/>
+            </div>
+        </div>
+    </div>
+    <!-- 横长条开始 -->
+    <div id="two">
+        <div class="main">
+            <div class="left">
+                <a href="">全部商品分类</a>
+                <img src="../img/header/pro.png" alt=""/>
+            </div>
+            <div class="center">
+                <a href="">首页</a>
+                <a href="">狗狗</a>
+                <a href="">猫猫</a>
+                <a href="">小宠</a>
+                <a href="">水族</a>
+                <a href="">全球购</a>
+                <a href="">创意生活</a>
+                <a href="">品牌馆</a>
+                <a href="">多优服务</a>
+            </div>
+            <div class="right">
+                <img src="../img/header/che.png" alt=""/>
+                <a href="">购物车</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

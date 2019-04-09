@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>商品详情</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <link rel="stylesheet" href="../css/bootstrap.css"/>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js">
+    </script>
+    <script src="../js/jquery-1.11.3.js"></script>
+
+    <link rel="stylesheet" href="../css/product.css">
+</head>
+<body>
+    <!-- 引入头部 -->
+    <header class="shouyepage1">
+
+    </header>
+    <header class="shouyepage2">
+
+    </header>
+    <script>
+        $(function(){
+            $(".shouyepage1").load("header_top.html");
+            $(".shouyepage2").load("header_search.html");
+        })
+    </script>
+    <!-- 第一部分：商品开始 -->
+    <div id="product">
+        <div class="main">
+            <!-- 左边部分：图片和分享 -->
+            <div class="left">
+                <div class="img">
+                    <div class="img_middle">
+                        <img src="../img/product/1.jpg" alt="">
+                    </div>
+                    <div class="img_small">
+                        <!-- 左箭头 -->
+                        <div class="btn_left"></div>
+                        <!-- 多个小图片 -->
+                        <div class="center">
+                            <img src="../img/product/1.jpg" alt="">
+                            <img src="../img/product/2.jpg" alt="">
+                            <img src="../img/product/3.jpg" alt="">
+                            <img src="../img/product/4.jpg" alt="">
+                            <img class="mr-0" src="../img/product/5.jpg" alt="">
+                        </div>
+                        <!-- 右箭头 -->
+                        <div class="btn_right"></div>
+                    </div>
+                </div>
+                <!-- 图片下的分享 -->
+                <div class="share">分享到：
+                    <a href="">
+                        <img title="分享到支付宝" src="../img/tubiao/zhifu.png" alt="">
+                    </a>
+                    <a href="">
+                        <img title="分享到微博" src="../img/tubiao/weibo.png" alt="">
+                    </a>
+                    <a href="">
+                        <img title="分享到微信" src="../img/tubiao/weixin.png" alt="">
+                    </a>
+                    <a href="">
+                        <img title="分享到QQ" src="../img/tubiao/qq.png" alt="">
+                    </a>
+                    <a href="">
+                        <img title="分享到朋友圈" src="../img/tubiao/quan.png" alt="">
+                    </a>
+                    <a href="">
+                        <img title="分享到人人网" src="../img/tubiao/renren.png" alt="">
+                    </a>
+                    <a href="">
+                        <img title="分享到QQ 空间" src="../img/tubiao/qqj.png" alt="">
+                    </a>
+                </div>
+            </div>
+            <!-- 中间部分：商品详情开始 -->
+            <div class="middle">
+                <!-- 商品名 -->
+                <div class="name">
+                    贝帮Beaphar 猫狗通用漱口水 250ml 荷兰原装进口
+                </div>
+                <!-- 价格 -->
+                <div class="price">
+                    <div class="price1">
+                        <span>多优价：</span>
+                        <span>￥56.00</span>
+                    </div>
+                    <div class="price2">厂商指导价：
+                        <span>￥60.00</span>
+                    </div>
+                </div>
+                <!-- 配送至 -->
+                <div class="place">
+                    <p class="mb-0">配送至：</p>
+                    <div class="place1" data-trigger="dropdown">
+                        <span>河南</span>
+                        <img src="../img/tubiao/bottom.png" alt="">
+                        <img class="hide" src="../img/tubiao/top.png" alt="">
+                        <div class="detail_place">
+                            <span>北京</span>
+                            <span>天津</span>
+                            <span>河北</span>
+                            <span>内蒙古</span>
+                            <span>山西</span>
+                            <span>辽宁</span>
+                            <span>吉林</span>
+                            <span>黑龙江</span>
+                            <span>上海</span>
+                            <span>江苏</span>
+                            <span>浙江</span>
+                            <span>安徽</span>
+                            <span>福建</span>
+                            <span>江西</span>
+                            <span>山东</span>
+                            <span>河南</span>
+                            <span>湖北</span>
+                            <span>湖南</span>
+                            <span>广东</span>
+                            <span>广西</span>
+                            <span>海南</span>
+                            <span>重庆</span>
+                            <span>贵州</span>
+                            <span>四川</span>
+                            <span>云南</span>
+                            <span>西藏</span>
+                            <span>陕西</span>
+                            <span>甘肃</span>
+                            <span>青海</span>
+                            <span>宁夏</span>
+                            <span>新疆</span>
+                        </div>
+                    </div>
+                    <script>
+                        //鼠标进入按钮的父元素div时，菜单显示
+                        $("[data-trigger=dropdown]").mouseover(function(){
+                            $(this).children().last().show();
+                            //改变下拉箭头为上拉箭头
+                            $(this).children().first().next().hide()
+                            .next().show()
+                        })
+                        .mouseout(function(){
+                            $(this).children().last().hide()
+                            //改变上拉箭头为下拉箭头
+                            $(this).children().first().next().show()
+                                    .next().hide()
+                        })
+                        //选中地点时，代替上面已有的地点
+                        $(".detail_place").on("click","span",function(){
+                            //不用自己做if is验证
+                            $(this).clone().replaceAll(".place1>span")
+                        })
+                    </script>
+                    <span class="zhuangtai">有货；</span>
+                    <span>支持使用优惠券</span>
+                </div>
+                <!-- 购买数量 -->
+                <div class="count">
+                    <p class="mb-0">购买数量：</p>
+                    <span class="first">-</span>
+                    <div class="center">1</div>
+                    <span class="last">+</span>
+                    <script>
+                        var count=document.getElementsByClassName([count]);
+                        var btns=document.getElementsByTagName("span");
+                        for(var btn of btns){
+                            btn.onclick= function () {
+                                var btn=this;
+                                var div=btn.parentNode.children[2];
+                                var n=parseInt(div.innerHTML);
+                                if(btn.innerHTML=="+"){
+                                    n++
+                                }else if(n>1){
+                                    n--
+                                }
+                                div.innerHTML=n;
+                            }
+                        }
+                    </script>
+                </div>
+                <!-- 立即购买，加入购物车 -->
+                <div class="now_car">
+                    <div class="tobuy">立即购买</div>
+                    <a class="tocar" href="shopping_car.html" target="_blank">加入购物车</a>
+                </div>
+                <!-- 收藏商品 -->
+                <div class="shoucang" data-target="shoucang">
+                    <img src="../img/tubiao/shoucang1.png" data-trigger=img1 alt="1">
+                    <span>收藏商品</span>
+                    <script>
+                        $("[data-trigger=img1]").click(function() {
+                            var $img = $(this);
+                            var i = parseInt($img.attr("alt"));
+                            if (i < 2){
+                                i++
+                            }else{
+                                i = 1;
+                            }
+                            $img.attr({src: `../img/tubiao/shoucang${i}.png`, alt: i})
+                        })
+                    </script>
+                </div>
+            </div>
+            <!-- 右边部分 -->
+            <div class="right">
+                <div class="one">
+                    <img src="../img/product/right1.png" alt="">
+                </div>
+                <div class="two">
+                    <p>所属品牌：<a href="">APDC</a></p>
+                    <p>商品编号：1684105</p>
+                    <p>已售：<a href="">565</a></p>
+                    <img src="../img/product/right2.png" alt="">
+                </div>
+                <div class="three">
+                    <div class="three1">
+                        <img src="../img/product/ma.png" alt="">
+                    </div>
+                    <div class="three2">
+                        <p class="mb-1">多优客户端</p>
+                        <p class="mb-0">注册立享27元，收单再送330元</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 第二部分：商品介绍、商品评论、售后服务、商品咨询 -->
+    <div id="details">
+        <!-- 2.1 标题 -->
+        <div class="title">
+            <a href="#jieshao" class="active">商品介绍</a>
+            <a href="#pinglun">商品评论</a>
+            <a href="#fuwu">售后服务</a>
+            <a href="#zixun">商品咨询</a>
+        </div>
+        <script>
+            <!-- 当文本向上移动到一定程度时,标题栏固定在页面顶层 -->
+            $(window).scroll(function(){
+                var h=$(this).scrollTop();//获得滚动条距top的高度
+                if(h>750){
+                    $(".title").addClass("fixDiv");
+                }else{
+                    $(".title").removeClass("fixDiv");
+                }
+            });
+            $(".title").on("click","a", function () {
+                $(this).addClass("active")
+                .siblings().removeClass("active")
+            })
+        </script>
+
+        <!-- 2.2 商品介绍 -->
+        <div id="jieshao">
+            <img src="../img/product/jieshao.jpg" alt="">
+            <img src="../img/product/jieshao1.jpg" alt="">
+            <img src="../img/product/jieshao2.jpg" alt="">
+            <img src="../img/product/jieshao3.jpg" alt="">
+            <img src="../img/product/jieshao4.jpg" alt="">
+            <img src="../img/product/jieshao5.jpg" alt="">
+            <img src="../img/product/jieshao6.jpg" alt="">
+            <img src="../img/product/jieshao7.jpg" alt="">
+            <img src="../img/product/jieshao8.jpg" alt="">
+            <img src="../img/product/jieshao9.jpg" alt="">
+        </div>
+        <!-- 2.3 商品评论 -->
+        <div id="pinglun">
+            <!-- 2.3.1 标题部分 -->
+            <div class="no1"><span>商品评论</span></div>
+            <!-- 2.3.2 主体部分 -->
+            <div class="no2">
+                <div class="left"><img src="../img/product/pinglun1.png" alt=""></div>
+                <div class="right"><img src="../img/product/pinglun2.png" alt=""></div>
+            </div>
+            <div class="no3">
+                <img src="../img/product/pinglun3.png" alt="">
+            </div>
+        </div>
+        <!-- 2.4 售后服务 -->
+        <div id="fuwu">
+            <div class="no1"><span>售后服务</span></div>
+            <div><img src="../img/product/fuwu.png" alt=""></div>
+        </div>
+        <!-- 2.5 商品咨询 -->
+        <div id="zixun">
+            <div class="no1"><span>商品咨询</span></div>
+            <div class="no">
+                <p class="mb-0">发表咨询：</p>
+                <p class="mt-2 mb-1">声明：您的咨询问题客服将在
+                    <a href="">1-2个工作日</a>
+                    内回复您；订单查询 、物流配送 、退换货 、商品损坏等售后问题请直接拨打
+                    <a href="">400-820-6098</a>。
+                </p>
+                <textarea name="" id="" cols="30" rows="10"></textarea>
+                <!--<div>提交咨询</div>-->
+                <div>
+                    <input type="button" value="提交咨询">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+     <!-- 引入底部内容 -->
+    <header class="footerpage">
+
+    </header>
+    <script>
+        $(function(){
+            $(".footerpage").load("footer.html");
+        })
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>用户注册</title>
+	<link rel="stylesheet" href="../css/zhuce.css">
+	<script src="../js/jquery.min.js"></script>
+	<script src="../js/popper.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+	<script src="../js/jquery-1.11.3.js"></script>
+</head>
+	<body>
+		<!-- 引入头部文件 -->
+		<header class="zhucepage">
+
+		</header>
+		<script>
+			$(function(){
+				$(".zhucepage").load("header_top.html");
+			})
+		</script>
+		<!-- 注册部分 -->
+	    <div id="zc">
+			<!-- 1.顶部——LOGO，注册，登录 -->
+			<div class="top">
+				<div class="left">
+					<div>
+						<img class="one" src="../img/header/name.png" alt=""/>
+						<img class="two" src="../img/header/duoyou.png" alt=""/>
+					</div>
+					<h1>用户注册</h1>
+				</div>
+				<div class="right">已有波奇账号，
+					<a href="denglu.html">直接登录</a>
+				</div>
+			</div>
+			<!-- 2.主体部分 -->
+			<div class="main">
+				<!-- 2.1 左边部分，注册详情 -->
+				<div class="left">
+					<!-- 2.1.1 手机注册 -->
+					<div class="first">
+						<img src="../img/zhuce/phono.png" alt="">
+						<p>手机注册</p>
+					</div>
+					<form action="/user/reg" method="post">
+						<!-- 2.1.2 注册详情 -->
+						<div class="second">
+							<form>
+								<table>
+									<tr>
+										<td>用户昵称：</td>
+										<td>
+											<input name="username" placeholder="请输入昵称"/>
+										</td>
+										<td>
+											<div class="vali_info">
+												1-8位字符
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td>手机号码：</td>
+										<td>
+											<input type="text" name="tel" placeholder="请输入手机号"/>
+										</td>
+										<td>
+											<div class="vali_info">11位有效数字</div>
+										</td>
+									</tr>
+									<tr>
+										<td>设置密码：</td>
+										<td>
+											<input type="password" name="password" placeholder="请输入密码"/>
+										</td>
+										<td>
+											<div class="vali_info">至少六位数字或字母</div>
+										</td>
+									</tr>
+									<tr>
+										<td>确认密码：</td>
+										<td>
+											<input type="password" name="pwd" placeholder="请确认密码"/>
+										</td>
+										<td>
+											<div class="vali_info">两次密码输入不一致</div>
+										</td>
+									</tr>
+								</table>
+							</form>
+							<script>
+								var forms=document.forms[0];
+								var txtName=forms.username;
+								var txtTel=forms.tel;
+								var txtPassword=forms.password;
+								var txtPwd=forms.pwd;
+								//鼠标进入输入框，右侧提示信息显示
+								txtName.onfocus=txtPassword.onfocus=txtTel.onfocus= function () {
+									var txt=this;
+									var div=txt.parentNode.nextElementSibling.children[0];
+									div.className=""
+								}
+								//鼠标移开输入框，验证文本内容是否通过
+								txtName.onblur= function () {
+									vali(this,/^[\w\u4e00-\u9fa5]{1,8}$/)
+								}
+								txtTel.onblur= function () {
+									vali(this,/^1[3-8]\d{9}$/)
+								}
+								txtPassword.onblur= function () {
+									vali(this,/^\w{6,}$/)
+								}
+								function vali(txt,reg){
+									var div=txt.parentNode.nextElementSibling.children[0];
+									txt.className="";
+									if(reg.test(txt.value)==true){
+										div.className="vali_success";
+										return true;
+									}else{
+										div.className="vali_fail";
+										return false;
+									}
+								}
+								//判断两次输入的密码是否一致
+								txtPwd.onblur= function () {
+									var txt=this;
+									var div=txt.parentNode.nextElementSibling.children[0];
+									if(txt.value==txtPassword.value) {
+										div.className = "vali_success";
+										return true;
+									}else{
+										div.className="vali_fail";
+										return false;
+									}
+								}
+							</script>
+							<div class="yan">
+								&nbsp;&nbsp;&nbsp;验证码：<input type="text" placeholder="请输入验证码">
+								<div class="ma" id="checkCode" onclick="change()"></div>
+								<span onclick="change()">看不清？换一张</span>
+								<div class="vali_info">验证码输入有误</div>
+							</div>
+							<script>
+								// <!-- 设置验证码 -->
+								var code;
+								function change(){
+									code = "";
+									var codeLength = 4; //验证码的长度
+									var codeChars = new Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',
+											'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'); //所有候选组成验证码的字符，当然也可以用中文的
+									for(var i = 0; i < codeLength; i++) {
+										var charNum = Math.floor(Math.random() * 52);
+										code += codeChars[charNum];
+									}
+									checkCode.innerHTML = code;
+								}
+								change();
+								// <!-- 验证码相等 -->
+								var input=document.querySelector("#zc .main .left .second .yan input");
+								input.onblur= function () {
+									var txt=input.value;
+									var div=input.parentNode.children[3];
+									if(txt.length<=0){
+										div.innerHTML="请输入验证码";
+										div.style.display="block";
+									}else if(txt.toUpperCase()!=code.toUpperCase()){
+										div.className="valifail";
+										change();
+										input.value="";//清空文本框
+									}else{
+										div.className="vali_success";
+									}
+								}
+							</script>
+						</div>
+						<!-- 2.1.3 注册按钮 -->
+						<div class="third">
+							<input id="auto" type="checkbox"><label for="auto">我已阅读并同意<a href="">《多优网服务协议》</a></label>
+							<div>
+								<input type="button" value="注&nbsp;册">
+							</div>
+						</div>
+					</form>
+
+				</div>
+                <!-- 2.2 右边的图片 -->
+				<div class="right">
+					<img src="../img/zhuce/zhuce.jpg" alt="">
+				</div>
+			</div>
+		</div>
+
+		<!-- 底部开始 -->
+		<div id="zc_footer">
+			<p class="mb-0">
+				<a href="">关于我们</a><span>|</span>
+				<a href="">友情链接</a><span>|</span>
+				<a href="">诚聘英才</a><span>|</span>
+				<a href="">联系我们</a><span>|</span>
+				<a href="">网站地图</a><span>|</span>
+				<a href="">意见反馈</a><span>|</span>
+				<a href="">帮助中心</a><span>|</span>
+				<a href="">客服热线：400-xxx-xxx8</a>
+			</p>
+			<p class="mb-0">
+				<img src="../img/footer/beian.png" alt=""/>
+				<a href="">沪公网安备&nbsp;xxxxxxxxxxxxxx号</a>
+				<span>|</span>
+				<a href="">沪ICP备xxxxxxxxxx</a>
+				<span>|</span>
+				<a href="">增值电信业务经营许可证：&nbsp;沪xxxxxxxx</a>
+			</p>
+			<p class="mb-0">
+				<span>Copyright © 2007-2019xxxxxxxxxx光橙（上海）信息科技有限公司 版权所有</span>
+			</p>
+			<p class="mt-2">
+				<a href="">
+					<img src="../img/footer/shangbiao1.png" alt=""/>
+				</a>
+				<a href="" class="ml-2 mr-2">
+					<img src="../img/footer/shangbiao2.png" alt=""/>
+				</a>
+				<a href="" class="mr-2">
+					<img src="../img/footer/shangbiao3.png" alt=""/>
+				</a>
+				<a href="">
+					<img src="../img/footer/shangbiao4.png" alt=""/>
+				</a>
+			</p>
+		</div>
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

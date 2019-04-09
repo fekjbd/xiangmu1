@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>用户登录</title>
+	<link rel="stylesheet" href="../css/denglu.css">
+	<script src="../js/jquery.min.js"></script>
+	<script src="../js/popper.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+	<script src="../js/jquery-1.11.3.js"></script>
+</head>
+<body>
+<!-- 引入头部文件 -->
+	<header class="denglupage">
+		
+	</header>
+	<script>
+		$(function(){
+			$(".denglupage").load("header_top.html");
+		})
+	</script>
+	<div id="denglu">
+		<!-- 1.顶部——LOGO，注册，登录 -->
+		<div class="top">
+			<div class="left">
+				<div>
+					<img class="one" src="../img/header/name.png" alt=""/>
+					<img class="two" src="../img/header/duoyou.png" alt=""/>
+				</div>
+				<h1>用户登录</h1>
+			</div>
+			<div class="right">还没浏览？快去
+				<a href="shouye.html" target="_blank">首页</a>看看吧！
+			</div>
+		</div>
+		<!-- 2.主体部分 -->
+		<div class="main">
+			<div class="left">
+				<img src="../img/denglu/denglu.jpg" alt="">
+			</div>
+			<div class="right">
+				<div class="one">
+					<div class="one_left">账号密码登录</div>
+					<div class="one_right">手机动态码登录</div>
+				</div>
+				<div class="twoo">
+					<img src="../img/denglu/yhm.png" alt="">
+					<input type="text" placeholder="请输入用户昵称">
+				</div>
+				<div class="three">
+					<img src="../img/denglu/mm.png" alt="">
+					<input type="text" placeholder="请输入密码">
+				</div>
+				<div class="yan">
+					<div class="yan_left">
+						<div>验证码：</div>
+						<div>
+							<input type="text">
+						</div>
+						<div></div>
+					</div>
+					<div class="ma">
+						<div class="bgdiv" id="bgdiv" onclick="change()"></div>
+						<span onclick="change()">看不清？换一张</span>
+					</div>
+					<script>
+						// <!-- 设置验证码 -->
+						var code;
+						function change(){
+							code = "";
+							var codeLength = 4; //验证码的长度
+							var checkCode = document.getElementById("bgdiv");
+							var codeChars = new Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',
+									'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'); //所有候选组成验证码的字符，当然也可以用中文的
+							for(var i = 0; i < codeLength; i++) {
+								var charNum = Math.floor(Math.random() * 52);
+								code += codeChars[charNum];
+							}
+							checkCode.innerHTML = code;
+						}
+						change();
+						// <!-- 验证码相等 -->
+						var input=document.querySelector("#denglu .main .right .yan .yan_left input");
+						input.onblur= function () {
+							var txt=input.value;
+							var div=input.parentNode.nextElementSibling;
+							if(txt.toUpperCase()==code.toUpperCase()){
+								div.className="vali_success";
+							}else{
+								div.className="valifail";
+								change();
+								input.value="";//清空文本框
+							}
+						}
+					</script>
+				</div>
+				<!-- 自动登录、忘记密码、免费注册 -->
+				<div class="five">
+					<div class="five_left">
+						<input id="auto" type="checkbox"><label for="auto">自动登录</label>
+					</div>
+					<div class="five_right">
+						<span><a href="">忘记密码</a></span>
+						<span>|</span>
+						<span><a href="zhuce.html" target="_blank">免费注册</a></span>
+					</div>
+				</div>
+				<!-- 登录按钮 -->
+				<input type="button" value="登&nbsp;&nbsp;&nbsp;录">
+				<!-- 使用合作网站账号登录 -->
+				<div class="seven">
+					<div class="mt-2">
+						<span class="mb-0">使用合作网站账号登录</span>
+					</div>
+					<ul>
+						<li>支付宝</li>
+						<li>|</li>
+						<li>新浪微博</li>
+						<li>|</li>
+						<li>微信</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+    <!-- 页面底端的各种信息 -->
+	<div id="dl_footer">
+		<div class="first">
+			<a href="">关于我们</a>
+			<span>|</span>
+			<a href="">友情链接</a>
+			<span>|</span>
+			<a href="">诚聘英才</a>
+			<span>|</span>
+			<a href="">联系我们</a>
+			<span>|</span>
+			<a href="">网站地图</a>
+			<span>|</span>
+			<a href="">意见反馈</a>
+			<span>|</span>
+			<a href="">帮助中心</a>
+			<span>|</span>
+			<a href="">客服热线：400-880-4509</a>
+		</div>
+		<p class="mb-0">
+			<a href="">关于我们</a><span>|</span>
+			<a href="">友情链接</a><span>|</span>
+			<a href="">诚聘英才</a><span>|</span>
+			<a href="">联系我们</a><span>|</span>
+			<a href="">网站地图</a><span>|</span>
+			<a href="">意见反馈</a><span>|</span>
+			<a href="">帮助中心</a><span>|</span>
+			<a href="">客服热线：400-xxx-xxx8</a>
+		</p>
+		<p class="mb-0">
+			<img src="../img/footer/beian.png" alt=""/>
+			<a href="">沪公网安备&nbsp;xxxxxxxxxxxxxx号</a>
+			<span>|</span>
+			<a href="">沪ICP备xxxxxxxxxx</a>
+			<span>|</span>
+			<a href="">增值电信业务经营许可证：&nbsp;沪xxxxxxxx</a>
+		</p>
+		<p class="mb-0">
+			<span>Copyright © 2007-2019xxxxxxxxxx光橙（上海）信息科技有限公司 版权所有</span>
+		</p>
+		<p class="mt-2">
+			<a href="">
+				<img src="../img/footer/shangbiao1.png" alt=""/>
+			</a>
+			<a href="" class="ml-2 mr-2">
+				<img src="../img/footer/shangbiao2.png" alt=""/>
+			</a>
+			<a href="" class="mr-2">
+				<img src="../img/footer/shangbiao3.png" alt=""/>
+			</a>
+			<a href="">
+				<img src="../img/footer/shangbiao4.png" alt=""/>
+			</a>
+		</p>
+	</div>
+</body>
+</html>
+

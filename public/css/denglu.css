@@ -1,0 +1,324 @@
+*{margin:0;padding:0}
+a:hover{color:#e53}
+/* 头部开始 */
+header{
+	width: 100%;
+	z-index: 1100;
+}
+#top .top_main{
+	width:1050px;
+}
+#top .top_main .top_main_right{
+	margin-left:290px;
+}
+/* 登录部分开始 */
+#denglu{
+	display: block;
+	width:1050px;
+	height:550px;
+	margin:0 auto;
+	margin-top:20px;
+}
+   /* 1 顶部——LOGO，注册，登录 */
+#denglu .top{
+	width:100%;
+	height:100px;
+}
+#denglu .top .left{
+	width:335px;
+	height:100%;
+	float: left;
+}
+#denglu .top .left>div{
+	width:190px;
+	height:100%;
+	float:left;
+}
+#denglu .top .left .one{
+	width:170px;
+	margin-right:15px;
+	margin-top:13px;
+}
+#denglu .top .left .two{
+	width:175px;
+	height:33px;
+	margin-top:-6px;
+}
+#denglu .top .left h1{
+	float:left;
+	height:40px;
+	color:#666;
+	font-size:28px;
+	font-weight:normal;
+	margin-top:30px;
+	padding:0 0 0 20px;
+	border-left:1px solid #ccc;
+}
+#denglu .top .right{
+	width:197px;
+	height:100%;
+	float:right;
+	font-size:14px;
+	color:#666;
+	line-height: 160px;
+}
+#denglu .top .right a {
+	color: #fff;
+	background: #e53;
+	padding:2px 5px;
+	text-decoration: none;
+}
+  /* 2.主体部分 */
+#denglu .main{
+	width:100%;
+	height:440px;
+	border:1px solid #e3e3e3;
+}
+#denglu .main .left{
+	width:540px;
+	height:100%;
+	float:left;
+	padding:28px 28px;
+}
+#denglu .main .right{
+	width:506px;
+	height:100%;
+	border-left:1px solid #e3e3e3;
+	float:left;
+	padding:40px 25px;
+}
+    /* 2.1 登录方式 */
+#denglu .main .right .one,.twoo,.three{
+	width:100%;
+	height:50px;
+	border:1px solid #e3e3e3;
+	border-bottom: none;
+}
+#denglu .main .right .one .one_left,.one_right{
+	width:225px;
+	height:100%;
+	font-size:16px;
+	color:#666;
+	float:left;
+	line-height: 50px;
+	text-align: center;
+}
+#denglu .main .right .one .one_left{
+	border-right: 1px solid #e3e3e3;
+}
+
+    /* 输入用户名 、密码 */
+#denglu .main .right img{
+	width:23px;
+	height:23px;
+	margin-left:13px;
+	margin-top:-6px;
+}
+#denglu .main .right input{
+	width:395px;
+	height:100%;
+	margin-left:10px;
+	border:none;
+	outline: none;
+	font-size:14px;
+}
+#denglu .main .right .three{
+	border-bottom: 1px solid #e3e3e3;
+}
+   /* 验证码部分 */
+#denglu .main .right .yan{
+	width:100%;
+	height:50px;
+	margin-top:10px;
+}
+#denglu .main .right .yan .yan_left{
+	width:225px;
+	height:50px;
+	float:left;
+	border:1px solid #e3e3e3;
+}
+#denglu .main .right .yan .yan_left div:first-child{
+	width:115px;
+	height:100%;
+	float:left;
+	font-size:16px;
+	color:#666;
+	padding-left:51px;
+	line-height: 50px;
+}
+#denglu .main .right .yan .yan_left div:nth-child(2){
+	width:85px;
+	height:100%;
+	float:left;
+}
+#denglu .main .right .yan .yan_left input{
+	width:85px;
+	height:100%;
+	outline: none;
+}
+#denglu .main .right .yan .yan_left div:last-child{
+	width:17px;height:17px;
+	float:left;
+	margin-top:17px;
+}
+        /* 验证码右边部分 */
+#denglu .main .right .yan .ma{
+	width:229px;
+	height:50px;
+	float:left;
+}
+#denglu .main .right .yan .ma .bgdiv{
+	width:80px;
+	height:30px;
+	background:#e3e3e3;
+	color:#e53;
+	font-size:20px;
+	text-align: center;
+	font-weight: bold;
+	letter-spacing: 3px;
+	line-height: 27px;
+	float:left;
+	margin-left:15px;
+	margin-top:10px;
+}
+#denglu .main .right .yan .ma span{
+	color:#1589DA;
+	font-size:14px;
+	margin-left:10px;
+	line-height: 50px;
+	cursor: pointer;
+}
+#denglu .main .right .vali_info{
+	width:100%;height:30px;
+	text-align: center;
+	float:right;
+	font-size:14px;
+	margin-top:10px;
+	color:red;
+	display: none;
+}
+.vali_success,.valifail{
+	background-repeat:no-repeat;
+	background-position:right center;
+	display:block;
+	font-size:14px;
+}
+.vali_success{
+	background-image:url("../img/zhuce/ok.png");
+	overflow:hidden;
+}
+.valifail{
+	background-image: url(../img/zhuce/err.png);
+}
+    /* 自动登录、忘记密码、免费注册 */
+#denglu .main .right .five{
+	width:100%;height:30px;
+	margin-top:5px;
+}
+#denglu .main .right .five .five_left{
+	width:100px;height:100%;
+	float:left;
+}
+#denglu .main .right .five .five_left >input{
+	width:12px;height:12px;
+	margin-right:3px;
+}
+#denglu .main .right .five .five_left label{
+	font-size:14px;
+	color:#666;
+	vertical-align: middle;
+}
+#denglu .main .right .five .five_right{
+	width:150px;height:100%;
+	float:right;
+}
+#denglu .main .right .five .five_right span:nth-child(2){
+	color:#e3e3e3;
+}
+#denglu .main .right .five .five_right span a{
+	font-size:14px;
+	color:#666;
+	padding:0 3px;
+}
+#denglu .main .right .five .five_right span a:hover{
+	color:#e53;
+	text-decoration: none;
+}
+    /* 登录 */
+#denglu .main .right>input{
+	width:100%;height:48px;
+	color:#fff;
+	font-size:24px;
+	background: #e53;
+	letter-spacing: 3px;
+	text-align: center;
+	margin-left: 0;
+	cursor: pointer;
+}
+    /* 2.7 使用合作网站账号登录 */
+#denglu .main .right .seven{
+	height:60px;  width:100%;
+	text-align:center;
+}
+#denglu .main .right .seven>div{
+	border-bottom: 1px solid #ccc;
+	height: 14px;
+	line-height: 30px;
+}
+#denglu .main .right .seven span{
+	font-size:13px;
+	color:#999;
+	background: #fff;
+	margin-top:12px;
+	padding:0 8px;
+}
+#denglu .main .right .seven ul li{
+	float:left;
+	font-size:13px;
+	list-style:none;
+	color:#666;
+	margin:17px -110px 0 130px;
+	cursor: pointer;
+}
+  /* 3.1 页面底端的各种信息 */
+#dl_footer .first{
+	width:100%;
+	height:40px;
+    text-align: center;
+	position:relative;
+	line-height: 50px;
+	font-size:14px;
+}
+#dl_footer .first a{
+	color:#666;
+	cursor: pointer;
+}
+#dl_footer .first a:hover{
+	color:#e53;
+	text-decoration: none;
+}
+#dl_footer .first span{
+	color:#999;
+	padding:0 1px;
+}
+#dl_footer p{
+	height:25px;
+	font-size: 14px;
+	line-height: 24px;
+	text-align: center;
+}
+#dl_footer p a{
+	color:#333;
+	text-decoration: none;
+}
+#dl_footer p div{
+	margin:0 auto;
+}
+#dl_footer p a:hover{
+	color:#e53;
+}
+#dl_footer p span{
+	margin:0 8px;
+	color:#333;
+}
+

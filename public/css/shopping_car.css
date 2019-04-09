@@ -1,0 +1,330 @@
+*{
+    margin:0;
+    padding:0;
+    nin-width:1190px;
+}
+a{
+    text-decoration:none;
+}
+a:hover{color:#e53}
+/* 头部开始 */
+header{
+    width: 100%;
+    z-index: 1000;
+}
+#one,#two{
+    display:none;
+}
+#top .top_main{
+    width:992px;
+}
+#top .top_main .top_main_right{
+    margin-left:223px;
+}
+   /* 订单状态及登录状态开始 */
+#pop{
+    width:100%;
+    height:161px;
+    clear:both;
+    background: #f3f3f3;
+}
+#pop .main{
+    width:992px;
+    height:100%;
+    margin:0 auto;
+}
+      /* 订单状态 */
+#pop .main .first{
+    width:380px;
+    height:50px;
+    float:right;
+    margin-top:48px;
+    background: url(../img/shopping_car/top.png) no-repeat;
+}
+#pop .main .first ul{
+    width:380px;
+    height:25px;
+    margin-top:0px;
+    list-style: none;
+}
+#pop .main .first ul li{
+    font-size:13px;
+    float: left;
+    margin-top:28px;
+}
+#pop .main .first ul li.car{
+    color:#e53;
+    left: 10px;
+    margin-left:6px;
+}
+#pop .main .first ul li.info{
+    margin-left:77px;
+}
+#pop .main .first ul li.sccess{
+    margin-left:72px
+}
+    /* 登录状态 */
+#pop .main .last{
+    width:990px;
+    height:42px;
+    background:#fffde6;
+    border:1px solid #feb655;
+    float:left;
+    margin-top:13px;
+    padding:12px 20px;
+    color:#666;
+}
+#pop .main .last img{
+    float:left;
+    margin-top:1px;
+}
+#pop .main .last p{
+    float:left;
+    font-size:13px;
+}
+#pop .main .last p a{
+    color:#fff;
+    background: #e53;
+    padding:5px 15px;
+    margin-right:5px;
+    text-decoration: none;
+}
+/* 购物车内容开始 */
+#car{
+    width:100%;
+    background:#f3f3f3;
+}
+#car #wrap{
+    width:992px;
+    padding-bottom: 50px;
+    padding-top:12px;
+    margin: 0 auto;
+}
+   /* 您的商品列表（江浙沪等满59元即免运费） */
+#car #wrap .top{
+    height:31px;
+}
+#car #wrap .top span{
+    color:#e53;
+    font-size:16px;
+    float:left;
+}
+#car #wrap .top a{
+    font-size:14px;
+    float:right;
+    text-decoration: none;
+    color:#666;
+}
+    /* 购物车中间部分开始 */
+#car #wrap .center{
+    width:100%;
+    position: relative;
+}
+      /* 表头开始 */
+#car #wrap .center .first{
+    height:41px;
+    border:1px solid #e3e3e3;
+    border-top:3px solid #e53;
+}
+#car #wrap .center .first>div{
+    height:100%;
+    color:#666;
+    font-size:13px;
+    padding:10px 0;
+    float:left;
+    text-align: center;
+}
+#car #wrap .center .first .checkAll{
+    width:113px;
+    text-align: left;
+    padding-left: 10px;
+}
+#car #wrap .center .first .checkAll label{
+    margin-left:4px;
+    vertical-align: middle;
+}
+#car #wrap .center .first .product{
+    width:250px;
+}
+#car #wrap .center .first .weight{
+    width:68px;
+    text-align: right;
+}
+#car #wrap .center .first .price{
+    width:110px;
+    text-align: right;
+}
+#car #wrap .center .first .youhui{
+    width:80px;
+}
+#car #wrap .center .first .count{
+    width:95px;
+}
+#car #wrap .center .first .xiaoji{
+    width:95px;
+}
+#car #wrap .center .first .caozuo{
+    width:156px;
+}
+    /* 购物车详情开始  */
+#car #wrap .center .main{
+    width:100%;
+    position:relative;
+    background: #fff;
+}
+#car #wrap .center .main .one{
+    height:120px;
+    border:1px solid #e3e3e3;
+    border-top:none;
+    padding:15px 13px;
+}
+#car #wrap .center .main .one .checkAll1,.product1,.weight1,.price1,.youhui1,.count1,.xiaoji1,.caozuo1{
+    float:left;
+    font-size:12px;
+    color:#e53;
+    height:100%;
+}
+#car #wrap .center .main .one .checkAll1{
+    width:113px;
+    padding-top:5px;
+}
+#car #wrap .center .main .one .checkAll1 img{
+    width:80px;
+    height:80px;
+    border:1px solid #e3e3e3;
+    margin-left:5px;
+}
+#car #wrap .center .main .one .product1{
+    width:243px;
+}
+#car #wrap .center .main .one .product1 a{
+    color:#333;
+    overflow: hidden;
+}
+#car #wrap .center .main .one .product1 a:hover{
+    color:#e53;
+    text-decoration: none;
+}
+#car #wrap .center .main .one .weight1{
+    width:68px;
+    color:#333;
+    text-align: right;
+}
+#car #wrap .center .main .one .price1{
+    width:110px;
+    padding-left: 45px;
+}
+#car #wrap .center .main .one .youhui1{
+    width:80px;
+    text-align: center;
+}
+#car #wrap .center .main .one .count1{
+    width:95px;
+    height:20px;
+    text-align:center;
+}
+#car #wrap .center .main .one .count1 .span1,.span3{
+    width:17px;
+    padding:0 5px;
+    color:#333;
+    cursor: pointer;
+    border:1px solid #e3e3e3;
+}
+#car #wrap .center .main .one .count1 .span2{
+    width:40px;
+    padding:0 15px;
+    border:1px solid #e3e3e3;
+    margin:0 -4px 0 -4px;
+}
+#car #wrap .center .main .one .xiaoji1{
+    width:95px;
+    padding-left:18px;
+}
+#car #wrap .center .main .one .caozuo1{
+    width:155px;
+    text-align: center;
+}
+#car #wrap .center .main .one .caozuo1 a{
+    color:#666666;
+    text-decoration: none;
+}
+#car #wrap .center .main .one .caozuo1 a:hover{
+    color:#e53;
+}
+/* 结算部分开始 */
+#car #wrap .center .last{
+    width:990px;
+    height:76px;
+    margin-top:25px;
+    position:relative;
+    background: #fff;
+    border:1px solid #e3e3e3;
+}
+#car #wrap .center .last .left{
+    width:300px;
+    height:100%;
+    font-size: 13px;
+    padding:0 10px;
+    float:left;
+    padding-top:20px;
+}
+#car #wrap .center .last .left span label{
+    vertical-align: middle;
+}
+#car #wrap .center .last .left .delete,.clearcar{
+    margin-left:30px;
+    font-weight: 700;
+}
+/* 右边部分 */
+#car #wrap .center .last .right{
+    width:130px;
+    height:100%;
+    float:right;
+}
+#car #wrap .center .last .right .sum{
+    width:106px;
+    height:37px;
+    background: #e53;
+    padding:2px 20px;
+    margin:18px auto;
+}
+#car #wrap .center .last .right .sum:hover{
+    background:#cc2200 ;
+}
+#car #wrap .center .last .right .sum a{
+    color: #ffffff;
+    font-size:22px;
+    text-decoration: none;
+}
+/* 中间部分 */
+#car #wrap .center .last .middle{
+    width:380px;
+    height:100%;
+    float:right;
+    padding:10px  0
+}
+#car #wrap .center .last .middle p{
+    font-size: 12px;
+    color:#999999;
+    text-align: right;
+}
+#car #wrap .center .last .middle p span{
+    color: #ee5533;
+}
+#car #wrap .center .last .middle p span.price{
+    font-size:20px;
+}
+
+
+
+
+
+
+/* 底部开始 */
+#footer{
+    width: 100%;
+    height: 33rem;
+}
+#footer>#first{
+    margin-top:-60px;
+}

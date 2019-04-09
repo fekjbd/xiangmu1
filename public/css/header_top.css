@@ -1,0 +1,114 @@
+/*第一部分*/
+#top{
+    width:100%;
+    height:37px;
+    border-bottom:1px solid #e3e3e3;
+}
+.top_main{
+    width:1190px;
+    height:100%;
+    margin:0 auto;
+    display:flex;
+    position:relative;
+}
+/* 收藏商城 */
+.top_main .top_main_left{
+    width:122px;
+    height:100%;
+    float:left;
+}
+.top_main .top_main_left img{
+    width:15px;
+    height:15px;
+    margin:-4px 0px 0px 0px;
+}
+.top_main .top_main_left span{
+    color:#e53;
+    text-decoration: none;
+    line-height:37px;
+    font-size:15px;
+}
+/* 省份部分 */
+.sheng{
+    float:left;
+    width:200px;
+    height:100%;
+    margin:0px 0px 0px 50px;
+}
+.sheng img{
+    width:15px;
+    height:15px;
+    margin-top:-3px;
+}
+.sheng select{
+    width:75px;
+    border:none;
+    margin-top:7px;
+    font-size:15px;
+    color:#e53;
+}
+.sheng select:target{
+    border-color:#e53;
+}
+.sheng select option{
+    color:#666;
+    font-size: 14px;
+}
+/* 右边部分 */
+.top_main_right{
+    width:470px;
+    height:100%;
+    margin:0px 0px 0px 422px;
+}
+.top_main_right .dd{
+    float:left;
+    margin:5px 0px 0px 0px;
+}
+.top_main_right .dd span{
+    color:#e3e3e3;
+}
+.top_main_right .dd a{
+    font-size:14px;
+    color:#666;
+}
+.top_main_right .dd a:hover{
+    color:#e53;
+    text-decoration: none;
+    font-weight: normal;
+}
+.top_main_right .dd span{
+    margin:0px 7px;
+}
+/* 二级菜单 */
+.server1{
+    width:79px;
+    display:none;
+    border: 1px solid #e3e3e3;
+    border-top:none;
+    position: absolute;
+    margin: 0 auto;
+    margin-top:0;
+    background-color: #fff;
+    padding:10px;
+    float: right;
+}
+.server1 a{
+    display: block;
+}
+.server:hover .server1{
+    display: block;
+    z-index: 20;
+}
+.dingdan{
+    right:256px;
+}
+.huiyuan{
+    width:93px;
+    right:164px;
+}
+.kehu{
+    right:86px;
+}
+.shouye{
+    right:8px;
+}

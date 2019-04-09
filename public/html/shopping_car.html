@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>购物车</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <link rel="stylesheet" href="../css/bootstrap.css"/>
+    <link rel="stylesheet" href="../css/shopping_car.css">
+</head>
+<body>
+    <!-- 引入头部文件 -->
+    <!-- <header class="carpage">
+
+    </header>
+    <script>
+        $(function(){
+            $(".carpage").load("header_top.html");
+        })
+    </script> -->
+    <!-- 引入头部 -->
+        
+		<header class="shoppingCar">
+
+		</header>
+
+    
+     <!-- 订单状态及登录状态开始 -->
+    <div id="pop">
+        <div class="main">
+            <div class="first">
+                <ul>
+                    <li class="car">我的购物车</li>
+                    <li class="info">核对订单信息</li>
+                    <li class="sccess">订单提交成功</li>
+                </ul>
+            </div>
+            <div class="last">
+                <img src="../img/shopping_car/warn.png" alt=""/>
+                <p class="mb-0">您还没有登录，
+                    <a href="denglu.html" target="_blank">登录</a>后，您的商品将永久保存在购物车中
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- 购物车内容开始 -->
+    <div id="car">
+        <div id="wrap">
+            <!-- 您的商品列表（江浙沪皖京津粤满59元即免运费） -->
+            <div class="top">
+                <span>您的商品列表（江浙沪皖京津粤满59元即免运费）</span>
+                <a href="shouye.html" target="_blank">继续购物&nbsp;&gt;</a>
+            </div>
+            <!-- 购物车列表开始 -->
+            <div class="center">
+                <!-- 表头开始 -->
+                <div class="first">
+                    <div class="checkAll">
+                        <input data-target="checkAll" type="checkbox" id="all"/><label for="all">全选</label>
+                    </div>
+                    <div class="product">商品</div>
+                    <div class="weight">重量</div>
+                    <div class="price">价格（元）</div>
+                    <div class="youhui">优惠</div>
+                    <div class="count">数量</div>
+                    <div class="xiaoji">小计（元）</div>
+                    <div class="caozuo">操作</div>
+                </div>
+                <!-- 购物车详情开始 -->
+                <div class="main">
+                    <div class="one">
+                        <div class="checkAll1">
+                            <input type="checkbox"/>
+                            <img src="../img/shopping_car/1.jpg" alt=""/>
+                        </div>
+                        <div class="product1">
+                            <a href="">
+                                比瑞吉 俱乐部全犬种成犬粮天然健康狗粮10kg
+                            </a>
+                        </div>
+                        <div class="weight1">
+                            <span>22.00kg</span>
+                        </div>
+                        <div class="price1">
+                            <span>289.00</span>
+                        </div>
+                        <div class="youhui1"></div>
+                        <div class="count1">
+                            <span class="span1">-</span>
+                            <span class="span2">1</span>
+                            <span class="span3">+</span>
+                        </div>
+                        <div class="xiaoji1">
+                            <span>289.00</span>
+                        </div>
+                        <div class="caozuo1">
+                            <a href="#">移入收藏</a>
+                            <br/>
+                            <a href="#">删除</a>
+                        </div>
+                    </div>
+
+                    <div class="one">
+                        <div class="checkAll1">
+                            <input type="checkbox"/>
+                            <img src="../img/shopping_car/1.jpg" alt=""/>
+                        </div>
+                        <div class="product1">
+                            <a href="">
+                                比瑞吉 俱乐部全犬种成犬粮天然健康狗粮10kg
+                            </a>
+                        </div>
+                        <div class="weight1">
+                            <span>22.00kg</span>
+                        </div>
+                        <div class="price1">
+                            <span>289.00</span>
+                        </div>
+                        <div class="youhui1"></div>
+                        <div class="count1">
+                            <span class="span1">-</span>
+                            <span class="span2">1</span>
+                            <span class="span3">+</span>
+                        </div>
+                        <div class="xiaoji1">
+                            <span>289.00</span>
+                        </div>
+                        <div class="caozuo1">
+                            <a href="#">移入收藏</a>
+                            <br/>
+                            <a href="#">删除</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- 结算部分开始 -->
+                <div class="last">
+                    <div class="left">
+                        <span>
+                            <input type="checkbox" id="allchexed"/>
+                            <label for="allchexed">全选</label>
+                        </span>
+                        <span class="delete">删除选中的商品</span>
+                        <span class="clearcar">清空购物车</span>
+                    </div>
+                    <div class="right">
+                        <div class="sum">
+                            <a href="#">去结算</a>
+                        </div>
+                    </div>
+                    <div class="middle">
+                        <p class="mb-0">已选择
+                            <span>3</span>件商品，总价：
+                            <span class="price">￥542.00</span>
+                        </p>
+                        <p class="mb-0">已节省：
+                            <span>￥0.00</span>
+                        </p>
+                    </div>
+                </div>
+                <script>
+                    //点击全选，下面的单选项都被选中
+                    var chbAll=document.querySelector("#wrap>.center>.first>div:first-child input");
+                    chbAll.onclick=function(){
+                        var checks=document.querySelectorAll("#wrap .center .main .one .checkAll input");
+                        for(var check in checks){
+                            check.checked=checks.checked
+                        }
+                    }
+                </script>
+            </div>
+        </div>
+    </div>
+    <div class="footerpage"></div>
+
+<script src="../js/jquery-1.11.3.js"></script>
+<script src="../js/jquery.min.js"></script>
+<script src="../js/popper.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/shopping_car.js"></script>
+<!-- 引入底部内容 -->
+
+<script>
+    $(function(){
+        $(".footerpage").load("footer.html");
+    })
+    $(function(){
+        $(".shoppingCar").load("header_top.html");
+    })
+</script>
+
+</body>
+</html>
