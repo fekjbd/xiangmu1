@@ -1,7 +1,3 @@
-SET NAMES UTF8;
-DROP DATABASE IF EXISTS duoyou;
-CREATE DATABASE duoyou CHARSET=UTF8;
-USE duoyou;
 
 /** 创建宠物种类表 **/
 CREATE TABLE pet_type(

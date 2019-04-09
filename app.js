@@ -1,16 +1,15 @@
-const express=require('express');
-//引入bodyparser中间件
-const bodyParser=require('body-parser');
-//引入用户路由器
-const userRouter=require('./routes/user.js');
-//创建web服务器
-var server=express();
-server.listen(3000);
-//托管静态资源到public
-server.use(express.static('./public'));
-//配置中间件
-server.use(bodyParser.urlencoded({
-    extended:false
-}));
-//把用户路由器挂载到/user下，访问形式/user/detail
-server.use('/user',userRouter);
+//使用express构建web服务器 --11:25
+const express = require('express');
+const bodyParser = require('body-parser');
+/*引入路由模块*/
+const userrouter=require("./routes/user.js")
+
+
+var app = express();
+app.listen(3000);
+//使用body-parser中间件
+app.use(bodyParser.urlencoded({extended:false}));
+//托管静态资源到public目录下
+app.use(express.static('public'));
+/*使用路由器来管理路由*/
+app.use("/user",userrouter);
