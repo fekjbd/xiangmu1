@@ -6,7 +6,7 @@ const userrouter=require("./routes/user.js")
 
 
 var app = express();
-app.listen(3000);
+app.listen(5050);
 //使用body-parser中间件
 app.use(bodyParser.urlencoded({extended:false}));
 //托管静态资源到public目录下
